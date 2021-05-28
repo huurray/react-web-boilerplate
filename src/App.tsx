@@ -1,26 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+// hocs
+import withInitialize from "hocs/withInitialize";
+import withStyle from "hocs/withStyle";
+// redux
+import { rootStore } from "stores";
+import { Provider } from "react-redux";
+// components
+import Navigator from "./Navigator";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+const App = (props) => {
+  // wrapped hocs
+  const hocs = [withStyle, withInitialize];
+  const ComponentWithHOCs = hocs.reduce(
+    (WrappedComponent: React.FC, withHOC: any) => {
+      return withHOC(WrappedComponent);
+    },
+    Navigator
   );
-}
+
+  return (
+    <Provider store={rootStore}>
+      <ComponentWithHOCs {...props} />
+    </Provider>
+  );
+};
 
 export default App;
