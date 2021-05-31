@@ -9,9 +9,9 @@ import Navigator from "./Navigator";
 
 const App = (props) => {
   // wrapped hocs
-  const hocs = [withStyle, withInitialize];
+  const hocs = [withInitialize, withStyle];
   const ComponentWithHOCs = hocs.reduce(
-    (WrappedComponent: React.FC, withHOC: any) => {
+    (WrappedComponent: React.FC, withHOC) => {
       return withHOC(WrappedComponent);
     },
     Navigator

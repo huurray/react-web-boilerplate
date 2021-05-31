@@ -7,12 +7,12 @@ import { P } from "styles/typography";
 interface Props {
   style?: {};
   textStyle?: {};
-  children?: React.Component;
+  children?: string;
   customChildren?: React.Component;
   [key: string]: any;
 }
 
-export default function ({
+function Button({
   style,
   children,
   textStyle,
@@ -20,7 +20,7 @@ export default function ({
   ...props
 }: Props) {
   return (
-    <Button style={style} {...props}>
+    <StyledButton style={style} {...props}>
       {customChildren ? (
         customChildren
       ) : (
@@ -28,11 +28,13 @@ export default function ({
           {children}
         </P>
       )}
-    </Button>
+    </StyledButton>
   );
 }
 
-const Button = styled.button`
+export default Button;
+
+const StyledButton = styled.button`
   width: fit-content;
   height: fit-content;
   border: none;
@@ -42,9 +44,9 @@ const Button = styled.button`
     return colors.PRIMARY;
   }};
 
-  border-radius: 30px;
+  border-radius: 3rem;
 
-  padding: 16px 20px;
+  padding: 1.4rem 2rem;
   position: relative;
 
   display: flex;

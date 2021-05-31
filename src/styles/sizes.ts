@@ -1,5 +1,7 @@
-export const HEADER_HEIGHT = "54px";
+export const HEADER_HEIGHT = "5.4rem";
 
-export const FOOTER_HEIGHT = "80px";
+export const INPUT_HEIGHT = "4rem";
 
-export const SIDE_PADDING = "20px";
+export const FOOTER_HEIGHT = "8rem";
+
+export const SIDE_PADDING = "2rem";

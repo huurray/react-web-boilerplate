@@ -1,12 +1,20 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 // api
 import useAuthAPI from "api/auth/useAuthAPI";
 
 const withInitialize = (WrappedComponent: React.FC) => (props: any) => {
+  const [initialized, setInitialized] = useState(false);
+
   const { getUserAPI } = useAuthAPI();
 
   async function init() {
-    await getUserAPI();
+    try {
+      await getUserAPI();
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setInitialized(true);
+    }
   }
 
   useEffect(() => {
@@ -16,7 +24,21 @@ const withInitialize = (WrappedComponent: React.FC) => (props: any) => {
 
   return (
     <>
-      <WrappedComponent {...props} />
+      {initialized ? (
+        <WrappedComponent {...props} />
+      ) : (
+        <div
+          style={{
+            display: "flex",
+            flex: 1,
+            height: "100%",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <span>loading animation...</span>
+        </div>
+      )}
     </>
   );
 };

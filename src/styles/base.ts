@@ -13,20 +13,22 @@ const GlobalStyles = createGlobalStyle`
         padding: 0;
         margin: 0;
         height: 100%;
+        font-size: 10px;
+    }
+
+    body{
+        color: ${colors.FONT};
+        font-size: 1.4rem;
+        outline: none;
+        line-height: normal;
+        overflow-x: hidden;
+        font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
     }
 
     #root {
         height: 100%;
     }
 
-    body{
-        color: ${colors.FONT};
-        font-size: 14px;
-        outline: none;
-        line-height: normal;
-        overflow-x: hidden;
-        font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
-    }
     a{
         text-decoration: none;
         color: inherit;
@@ -44,6 +46,7 @@ const GlobalStyles = createGlobalStyle`
         background-color: transparent;
         padding: 0;
         border: 0;
+        outline: none;
     }
 `;
 

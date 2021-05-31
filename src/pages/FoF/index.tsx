@@ -1,10 +1,10 @@
 function FoF() {
   return (
-    <div>
+    <main>
       <article>
-        <p>404 page</p>
+        <h1>404 page</h1>
       </article>
-    </div>
+    </main>
   );
 }
 
