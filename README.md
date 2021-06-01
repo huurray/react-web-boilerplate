@@ -1,4 +1,4 @@
-# react-boilerplate
+# react-web-boilerplate
 
 > simple react web boilerplate by huurray.
 
