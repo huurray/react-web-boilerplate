@@ -11,7 +11,7 @@ export default function useAuthAPI() {
       const res: User = await new Promise((resolve) =>
         setTimeout(() => resolve({ name: "huurray" }), 1000)
       );
-      authDispatch.initialize(res);
+      authDispatch.setUser(res);
       return res;
     } catch (error) {
       throw error;

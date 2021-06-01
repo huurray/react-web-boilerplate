@@ -14,18 +14,23 @@
 
 ```bash
 ├── src
-    ├── api              # api 호출 및 데이터 처리
-    ├── assets           # static 파일들
-    ├── components       # 모듈화된 컴포넌트
-    ├── hocs             # hocs
-    ├── hooks            # hooks
-    ├── lib              # pure js functions
-    ├── pages            # 라우터 페이지 컴포넌트
-    ├── stores           # 리덕스 slices(action, store, reducer)
+    ├── api                # api 호출 및 데이터 처리
+    ├── assets             # static 파일들
+    ├── components         # 모듈화된 컴포넌트
+    ├── hocs               # hocs
+    ├── hooks              # hooks
+    ├── lib                # js pure functions
+    ├── pages              # 라우터 페이지 컴포넌트
+    ├── stores             # 리덕스 slices(action, store, reducer)
     ├── styles
-        ├── ui           # 모듈화된 UI컴포넌트
-    ├── App.tsx          # Provider, hocs 설정
-    ├── Navigator.tsx    # 라우터 설정
+        ├── ui             # 모듈화된 UI컴포넌트
+        ├── base.ts        # 스타일 리셋 및 글로벌 스타일 정의
+        ├── colors.ts      # 컬러 정의
+        ├── sizes.ts       # 사이즈 정의
+        ├── typography.tsx # 텍스트 정의
+        ├── index.tsx      # ui폴더의 컴포넌트를 임폴트하여 관리
+    ├── App.tsx            # Provider, hocs 설정
+    ├── Navigator.tsx      # 라우터 설정
     ├── index.tsx
 ```
 
@@ -39,7 +44,7 @@
   npm run build
 ```
 
-## 사용한 Packages
+## 기본 Packages
 
 ### 라우팅
 

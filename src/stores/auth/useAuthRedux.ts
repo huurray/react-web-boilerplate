@@ -12,11 +12,6 @@ export default function useAuthRedux() {
     shallowEqual
   );
 
-  const initialize = useCallback(
-    (user: User) => dispatch(slice.actions.initialize(user)),
-    [dispatch]
-  );
-
   const setUser = useCallback(
     (user: User) => dispatch(slice.actions.setUser(user)),
     [dispatch]
@@ -25,7 +20,6 @@ export default function useAuthRedux() {
   return {
     state,
     authDispatch: {
-      initialize,
       setUser,
     },
   };
