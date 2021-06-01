@@ -8,8 +8,6 @@ import * as colors from "styles/colors";
 function Main() {
   const { state } = useAuthRedux();
 
-  console.log(process.env);
-
   return (
     <main style={{ padding: sizes.SIDE_PADDING }}>
       <article>

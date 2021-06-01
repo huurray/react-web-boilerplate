@@ -11,7 +11,7 @@ const withInitialize = (WrappedComponent: React.FC) => (props: any) => {
     try {
       await getUserAPI();
     } catch (error) {
-      console.log(error);
+      console.error(error);
     } finally {
       setInitialized(true);
     }
